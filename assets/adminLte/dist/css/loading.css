@@ -1,0 +1,15 @@
+
+
+        #loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            opacity: 0.7;
+            background-color: #fff;
+            background: rgba(255, 255, 255, 1) url('img/tenor.gif') no-repeat center center;
+            z-index: 10000;
+        }

@@ -64,6 +64,8 @@
         </script>
         <script src="<?php echo base_url(); ?>/assets/adminLte/plugins/pdfmake/vfs_fonts.js?t=<?php echo time();?>">
         </script>
+        <script src="<?php echo base_url(); ?>/assets/adminLte/plugins/toastr/toastr.min.js?t=<?php echo time();?>">
+        </script>
         <script>
             function display_ct5() {
                 var x = new Date()

@@ -150,14 +150,14 @@
               <div class="row">
                 <div class="form-group col-lg-12">
                   <label for="message-text5" class="col-form-label">Diagnosa: </label>
-                  <textarea type="text" class="form-control" id="diagnosa" name="diagnosa"></textarea>
+                  <textarea type="text" class="form-control alphaonly" id="diagnosa" name="diagnosa"></textarea>
                   <div class="print-error-msg 1" style="display:none"></div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-lg-12">
                   <label for="message-text5" class="col-form-label">Keterangan: </label>
-                  <textarea type="text" class="form-control" id="keterangan" name="keterangan"></textarea>
+                  <textarea type="text" class="form-control alphaonly" id="keterangan" name="keterangan"></textarea>
                   <div class="print-error-msg 2" style="display:none"></div>
                 </div>
               </div>
@@ -337,5 +337,25 @@
       ],
       "buttons": ["copy", "csv", "excel", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+    $("#diagnosa, #keterangan").on("input", function(){
+        var regexp = /[^a-zA-Z]/g;
+        if($(this).val().match(regexp)){
+          $(this).val( $(this).val().replace(regexp,'') );
+          Toast.fire({
+            icon: 'warning',
+            title: ' Tidak Bisa Angka!.'
+          })
+        }
+    });
   });
 </script>
